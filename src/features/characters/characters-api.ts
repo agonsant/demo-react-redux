@@ -6,9 +6,12 @@ const getIdFromCharacter = (character: People): string => {
 };
 
 export const getAllCharactersByPage = async (
-  page: number = 1,
+  page: number,
 ): Promise<Characters> => {
   const response = await fetch(`https://swapi.dev/api/people?page=${page}`);
+  if (!response.ok) {
+    throw new Error('General Error. TBD manage error cases');
+  }
   const characters: PeopleResponse = await response.json();
   return {
     count: characters.count,
