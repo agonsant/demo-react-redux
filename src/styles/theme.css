@@ -1,0 +1,11 @@
+:root {
+  --text-color-primary: white;
+  --container-bg-hover-primary: green;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color-primary: white;
+    --container-bg-hover-primary: red;
+  }
+}
