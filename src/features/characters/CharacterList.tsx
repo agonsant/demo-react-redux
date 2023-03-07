@@ -18,8 +18,8 @@ const CharacterList = () => {
   const charactersState = useAppSelector(selectCharacters);
   const dispatch = useAppDispatch();
   useEffect(() => {
-    dispatch(getAllByPageAsync(charactersState.currentPage + 1));
-  }, []);
+    dispatch(getAllByPageAsync(1));
+  }, [dispatch]);
 
   const generateCharacterComponent = () => {
     switch (charactersState.status) {
